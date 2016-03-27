@@ -1,5 +1,5 @@
-#download.file("https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip", "./household_power_consumption.zip")
-#unzip("./household_power_consumption.zip")
+download.file("https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip", "./household_power_consumption.zip")
+unzip("./household_power_consumption.zip")
 hpc <- read.table("household_power_consumption.txt", header =  TRUE, sep = ";", na.strings = "?")
 hpc$DateTime <- paste(hpc$Date, hpc$Time, sep = " ")
 hpc$DateTime <- strptime(hpc$DateTime, format = "%d/%m/%Y %H:%M:%S", tz = "")
